@@ -11,7 +11,7 @@ ARG KURA_COMMIT
 ARG PACKED=false
 
 ENV \
-  GIT_REPO=${GIT_REPO:-https://github.com/eclipse/kura.git} \
+  GIT_REPO=${GIT_REPO:-https://github.com/hyperknow/kura.git} \
   GIT_BRANCH=${GIT_BRANCH:-develop} \
   JAVA_HOME=/usr/lib/jvm/default-jvm \
   MAVEN_PROPS=-DskipTests \
@@ -69,6 +69,12 @@ RUN echo "$GIT_REPO / $GIT_BRANCH / $KURA_COMMIT" && \
     apk --no-cache add eudev glib
 
 EXPOSE 443
+EXPOSE 8443
+EXPOSE 8080
+EXPOSE 9010
+EXPOSE 9011
+EXPOSE 9090
+EXPOSE 1450
 
 VOLUME ["/load"]
 

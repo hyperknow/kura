@@ -46,12 +46,6 @@
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.35.v20201120</version>
         </dependency>
-		<!-- https://mvnrepository.com/artifact/net.bull.javamelody/javamelody-core -->
-		<dependency>
-		    <groupId>net.bull.javamelody</groupId>
-		    <artifactId>javamelody-core</artifactId>
-		    <version>1.86.0</version>
-		</dependency>
     </dependencies>
 
     <build>
@@ -72,12 +66,6 @@
                 <configuration>
                     <instructions>
                         <Fragment-Host>org.eclipse.equinox.http.jetty</Fragment-Host>
-                    <Embed-Dependency>javamelody-core</Embed-Dependency>
-                    <Embed-Transitive>true</Embed-Transitive>
-                    <Import-Package>*;resolution:=optional</Import-Package>
-                    <Export-Package>
-                    	*.*
-                    </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
