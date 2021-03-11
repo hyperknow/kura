@@ -22,8 +22,8 @@ MAVEN_PROPS="-B"
 
 [ -z "$RUN_TESTS" ] && MAVEN_PROPS="$MAVEN_PROPS -Dmaven.test.skip=true"
 
-mvn "$@" -f target-platform/pom.xml clean install $MAVEN_PROPS &&
-mvn "$@" -f kura/pom.xml clean install $MAVEN_PROPS &&
-mvn "$@" -f kura/examples/pom.xml clean install $MAVEN_PROPS &&
-mvn "$@" -f kura/distrib/pom.xml clean install $MAVEN_PROPS 
+mvn "$@" -f target-platform/pom.xml clean install -Dcheckstyle.skip $MAVEN_PROPS &&
+mvn "$@" -f kura/pom.xml clean install -Dcheckstyle.skip $MAVEN_PROPS &&
+mvn "$@" -f kura/examples/pom.xml clean install -Dcheckstyle.skip $MAVEN_PROPS &&
+mvn "$@" -f kura/distrib/pom.xml clean install -Dcheckstyle.skip $MAVEN_PROPS
 
